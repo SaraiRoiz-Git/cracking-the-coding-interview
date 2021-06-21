@@ -18,32 +18,37 @@ public class LinkedListTests {
         return list;
     }
 
-//    @Test
-//    public void removeDuplicatesTest()throws Exception {
-//        LinkedList<Integer> list = new LinkedList<Integer>();
-//        list.add(1);
-//        list.add(2);
-//        list.add(3);
-//        list.add(4);
-//        list.add(5);
-//        list.add(3);
-//        list.add(6);
-//        list.add(7);
-//        list.add(7);
-//        list.add(7);
-//        list.add(7);
-//        list.add(7);q.removeDuplicates(list);
-//        for (int i=0;i<list.size();i++){
-//            System.out.println(list.get(i));
-//        }
-//    }
+    @Test
+    public void removeDuplicatesTest()throws Exception {
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(3);
+        list.add(6);
+        list.add(7);
+        list.add(7);
+        list.add(7);
+        list.add(7);
+        list.add(7);
+       q.removeDuplicates(list);
+
+       Assert.assertTrue(list.size()==7);
+    for (int i=0;i<7;i++){
+             Assert.assertTrue(list.get(i) == i+1);
+        }
+    }
 
     @Test
     public  void findTheKthLastElementLLTest(){
-       Node list = createLIst();
-        System.out.println(q.findTheKthLastElementLL(list,8).data);
-        System.out.println(list.data);
-//       Assert.assertTrue(q.findTheKthLastElementLL(list,8).data == 13));
+       Node<Integer> list = createLIst();
+        Assert.assertTrue(q.findTheKthLastElementLL(list,8).data.intValue()==13);
+        Assert.assertTrue(q.findTheKthLastElementLL(list,19).data.intValue()==2);
+        Assert.assertTrue(q.findTheKthLastElementLL(list,10).data.intValue()==11);
+        Assert.assertTrue(q.findTheKthLastElementLL(list,1).data.intValue()==20);
+        Assert.assertTrue(q.findTheKthLastElementLL(null,8)==null);
     }
 
 
